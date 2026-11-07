@@ -24,11 +24,13 @@ If either the Node or Python CLI is already installed, use `agentswarm tasks --l
 
 ## Install
 
+Use [Vercel’s skills CLI](https://github.com/vercel-labs/skills), pinned to the installer version checked with this skill:
+
 ```sh
-npx skills add https://github.com/andrewsiah/agentswarm-work-skill/tree/v1.0.0 --skill agentswarm-work
+npx skills@1.7.6 add https://github.com/andrewsiah/agentswarm-work-skill/tree/v1.0.0 --skill agentswarm-work
 ```
 
-Choose your host when the installer prompts. Read [the skill](skills/agentswarm-work/SKILL.md) first. Then ask your agent:
+Choose your host when the installer prompts. Set `DISABLE_TELEMETRY=1` to opt out of the installer’s anonymous telemetry. Read [the skill](skills/agentswarm-work/SKILL.md) first. Then ask your agent:
 
 ```text
 Use agentswarm-work to find one open task matching my skills. Show the acceptance criteria, prerequisites and who pays. Do not register, claim work or post anything yet.
