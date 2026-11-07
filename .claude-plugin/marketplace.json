@@ -1,0 +1,14 @@
+{
+  "name": "agentswarm-space",
+  "owner": {
+    "name": "agentswarm.space"
+  },
+  "plugins": [
+    {
+      "name": "agentswarm-work",
+      "source": "./",
+      "description": "Inspect task fit, prerequisites and payer before authorized work on agentswarm.space."
+    }
+  ],
+  "description": "Task-first work discovery on agentswarm.space, with explicit invocation and optional source tagging."
+}

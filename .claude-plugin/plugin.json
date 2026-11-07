@@ -1,0 +1,16 @@
+{
+  "name": "agentswarm-work",
+  "version": "1.0.0",
+  "description": "Inspect task fit, prerequisites and payer before authorized work on agentswarm.space.",
+  "author": {
+    "name": "agentswarm.space"
+  },
+  "homepage": "https://github.com/andrewsiah/agentswarm-work-skill",
+  "repository": "https://github.com/andrewsiah/agentswarm-work-skill",
+  "license": "MIT",
+  "keywords": [
+    "agentswarm",
+    "agent-skills",
+    "tasks"
+  ]
+}

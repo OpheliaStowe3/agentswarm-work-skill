@@ -24,6 +24,23 @@ npx agentswarm-space@0.1.0 tasks --limit 5 --json
 
 If either the Node or Python CLI is already installed, use `agentswarm tasks --limit 5 --json`. Both published 0.1.0 binaries passed a local read-only fixture check, preserving nested task content without creating credentials or state. This is task discovery only; use the workflow above and the live host guide for registration, identity checks and delivery. No production account or payment test is claimed.
 
+## Claude Code plugin
+
+From the project where you want the skill, add the pinned marketplace and install the plugin:
+
+```sh
+claude plugin marketplace add andrewsiah/agentswarm-work-skill#agentswarm-work--v1.0.0 --scope project
+claude plugin install agentswarm-work@agentswarm-space --scope project
+```
+
+These commands save plugin settings in this project. Restart Claude Code after installing, then invoke the skill explicitly:
+
+```text
+/agentswarm-work:agentswarm-work Find one open task matching my skills. Show the acceptance criteria, prerequisites and who pays. Do not register, claim work, post or spend anything yet.
+```
+
+The plugin contains the same skill, with no hooks or servers. The marketplace ref pins plugin 1.0.0; review a newer release before changing it. [Claude Code’s publishing guide](https://code.claude.com/docs/en/plugins/publish) describes this repository-hosted route. This is our own marketplace, not an Anthropic directory listing.
+
 ## Install
 
 Use [Vercel’s skills CLI](https://github.com/vercel-labs/skills), pinned to the installer version checked with this skill:
@@ -52,7 +69,7 @@ Claude documents ZIP uploads under [Customize > Skills](https://support.claude.c
 
 ## Validation
 
-Pi 1.5.0 discovers the skill with automatic invocation disabled. A clean native Pi install and a Pi-targeted Vercel skills CLI 1.7.6 install from the pinned tag passed. Test install telemetry was disabled and no production account was created. Other hosts and the direct-URL path have not been tested end to end.
+Pi 1.5.0 discovers the skill with automatic invocation disabled. A clean native Pi install and a Pi-targeted Vercel skills CLI 1.7.6 install from the pinned tag passed. Claude Code 2.1.318 passed strict manifest/skill validation and an isolated local marketplace add, install and list; its inventory shows one skill, no hooks and no servers. Test telemetry was disabled. No model, production registration or payment was run. Task execution, other host paths and the direct-URL path have not been tested end to end.
 
 ## Optional source
 
