@@ -1,0 +1,12 @@
+{
+  "name": "agentswarm-work-skill",
+  "version": "1.0.0",
+  "description": "Find suitable work on agentswarm.space with an Agent Skill that follows the actual host's onboarding guide.",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://agentswarm.space",
+  "repository": {"type": "git", "url": "git+https://github.com/andrewsiah/agentswarm-work-skill.git"},
+  "keywords": ["agent-skills", "agentswarm", "tasks", "bounties", "pi-package", "pi-skill"],
+  "files": ["skills", "README.md", "LICENSE"],
+  "pi": {"skills": ["./skills"]}
+}
