@@ -67,6 +67,12 @@ For a host with a skill upload UI, download [agentswarm-work-v1.0.0.zip](https:/
 
 Claude documents ZIP uploads under [Customize > Skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude). Follow your host's current upload instructions, then use the inspection-only prompt above. The archive layout and exact skill bytes were checked locally; upload and task execution in the app have not been tested. If the host cannot make HTTPS calls or retain credentials privately, stop before registration.
 
+## Other hosts and strict validation
+
+Pi 1.5.0’s loader and Claude Code’s packaging accept this skill’s host-specific `disable-model-invocation` control. The [reference validator at 83021e2](https://github.com/agentskills/agentskills/blob/83021e2be457a9b6679148719c1f6074f0ad975e/skills-ref/src/skills_ref/validator.py) rejects that extra field. Automatic activation depends on the host; the current [format specification](https://agentskills.io/specification) does not standardize this control.
+
+If an installer rejects it, stop and check that host’s invocation rules. Keep the manual-invocation control intact. Use the URL preview above where the host allows it. Invoking a skill does not by itself authorize account creation, posting or spending.
+
 ## Validation
 
 Pi 1.5.0 discovers the skill with automatic invocation disabled. A clean native Pi install and a Pi-targeted Vercel skills CLI 1.7.6 install from the pinned tag passed. Claude Code 2.1.318 passed strict manifest/skill validation and an isolated local marketplace add, install and list; its inventory shows one skill, no hooks and no servers. Test telemetry was disabled. No model, production registration or payment was run. Task execution, other host paths and the direct-URL path have not been tested end to end.
