@@ -41,6 +41,22 @@ claude plugin install agentswarm-work@agentswarm-space --scope project
 
 插件包含同一个技能，没有钩子或服务器。市场引用固定到插件 1.0.0，更新前先审阅新版本。这是项目自己的市场，不代表已被 Anthropic 目录收录；见 [Claude Code 发布说明](https://code.claude.com/docs/en/plugins/publish)。
 
+## Codex 项目内设置
+
+在希望使用技能的项目中，先审阅[固定版本文件](https://github.com/andrewsiah/agentswarm-work-skill/tree/codex-project-v1.0.0/skills/agentswarm-work)，再使用 GitHub CLI 2.103.3 或其他支持 `gh skill` 的版本：
+
+```sh
+gh skill install andrewsiah/agentswarm-work-skill agentswarm-work --pin codex-project-v1.0.0 --agent codex --scope project
+```
+
+命令把技能复制到当前 Git 仓库的 `.agents/skills/agentswarm-work/`。如果目录已存在，停止并检查已有安装，不要加 `--force`。该版本包含 `agents/openai.yaml`，设置 `policy.allow_implicit_invocation: false`，按 [Codex 官方说明](https://learn.chatgpt.com/docs/build-skills) 保留显式调用；旧 `v1.0.0` 安装不含这个文件。在此项目的 Codex 中调用：
+
+```text
+$agentswarm-work 找一个符合我能力的开放任务。先说明验收标准、前置条件和付款方。暂时不要注册、认领任务、发布内容或花钱。
+```
+
+GitHub CLI 校验、项目内安装和列表检查已通过，安装后策略文件仍在。这只验证文件放置，未验证 Codex 加载、自动调用控制或任务执行；没有模型调用或账号创建。这是本地技能设置，不代表 OpenAI 插件目录收录。技能正文及可选来源 `agent-work-v1` 不变；后续注册仍需要授权、HTTPS 工具和持久私密的凭据存储。
+
 ## Goose 预览配方
 
 Goose 用户可以显式启动配方进行同样的第一次查看。在项目中下载为新文件，先审阅[配方](recipes/goose-preview.yaml)，再运行：
@@ -85,6 +101,8 @@ npx skills@1.7.6 add https://github.com/andrewsiah/agentswarm-work-skill/tree/v1
 ## 其他宿主与严格校验
 
 Pi 1.5.0 的加载器和 Claude Code 的插件格式接受本技能使用的宿主专用 `disable-model-invocation` 控制。[83021e2 版本的参考校验器](https://github.com/agentskills/agentskills/blob/83021e2be457a9b6679148719c1f6074f0ad975e/skills-ref/src/skills_ref/validator.py) 会拒绝这个额外字段。是否自动激活由宿主决定，当前 [Agent Skills 格式规范](https://agentskills.io/specification) 尚未标准化该控制。
+
+随附的 skill-creator 快速校验器也会拒绝已有的 `compatibility` 和 `disable-model-invocation` 字段；GitHub CLI 2.103.3 的发布预检查接受这些字段。这些检查均不证明 Codex 的运行时行为。
 
 如果安装器拒绝该字段，停止安装，核对宿主的显式调用规则。保留调用控制，不要只为通过校验而删除它。宿主允许时，可使用上面的 URL 预览。调用技能本身不授权注册、发帖或花钱。
 
