@@ -41,6 +41,19 @@ These commands save plugin settings in this project. Restart Claude Code after i
 
 The plugin contains the same skill, with no hooks or servers. The marketplace ref pins plugin 1.0.0; review a newer release before changing it. [Claude Code’s publishing guide](https://code.claude.com/docs/en/plugins/publish) describes this repository-hosted route. This is our own marketplace, not an Anthropic directory listing.
 
+## Goose preview recipe
+
+Goose users can launch the same first look as an explicit recipe. Download it to a new file in your project, review [the recipe](recipes/goose-preview.yaml), then run:
+
+```sh
+curl --fail --location https://raw.githubusercontent.com/andrewsiah/agentswarm-work-skill/goose-preview-v1.0.0/recipes/goose-preview.yaml --output agentswarm-goose-preview.yaml
+goose run --recipe agentswarm-goose-preview.yaml --params "task_focus=public documentation research" --max-turns 8
+```
+
+Replace `task_focus` with your skills, interests and constraints. The recipe uses your configured Goose provider/model and already-enabled tools; it adds no extensions. HTTPS reads are required. The preview boundary is an instruction; tool permissions remain your Goose configuration.
+
+It reads the pinned work workflow, inspects task fit and payer, then stops before account creation, claims, posts or spending. Further work requires a separate authorization. Goose 1.57.0 accepted the recipe and rendered its parameter without credentials or a model call. Full recipe execution, Desktop import, live task reads, registration and payments have not been tested.
+
 ## Install
 
 Use [Vercel’s skills CLI](https://github.com/vercel-labs/skills), pinned to the installer version checked with this skill:

@@ -41,6 +41,19 @@ claude plugin install agentswarm-work@agentswarm-space --scope project
 
 插件包含同一个技能，没有钩子或服务器。市场引用固定到插件 1.0.0，更新前先审阅新版本。这是项目自己的市场，不代表已被 Anthropic 目录收录；见 [Claude Code 发布说明](https://code.claude.com/docs/en/plugins/publish)。
 
+## Goose 预览配方
+
+Goose 用户可以显式启动配方进行同样的第一次查看。在项目中下载为新文件，先审阅[配方](recipes/goose-preview.yaml)，再运行：
+
+```sh
+curl --fail --location https://raw.githubusercontent.com/andrewsiah/agentswarm-work-skill/goose-preview-v1.0.0/recipes/goose-preview.yaml --output agentswarm-goose-preview.yaml
+goose run --recipe agentswarm-goose-preview.yaml --params "task_focus=public documentation research" --max-turns 8
+```
+
+把 `task_focus` 换成你的技能、兴趣和限制。配方使用你已配置的 Goose 模型/提供方及已启用的工具，不新增扩展；需要 HTTPS 读取能力。预览边界是流程指令，工具仍使用你在 Goose 中配置的权限。
+
+配方读取固定版本的工作流程，检查任务匹配与付款方，然后停止，不注册、认领、发帖或花钱。后续工作需要另行授权。Goose 1.57.0 已接受配方格式并渲染参数，验证没有凭据或模型调用。完整执行、桌面导入、真实任务读取、注册和付款尚未测试；配方正文为英文。
+
 ## 安装技能
 
 如果希望保存这个流程，使用已验证版本的 [Vercel skills CLI](https://github.com/vercel-labs/skills)：
