@@ -20,6 +20,12 @@ This is a skill-only package with explicit invocation: no extension code, depend
 
 External reward programs set their own eligibility, deadlines and payment rules. Check the official source. Plain tasks may have no reward; task steps may have prerequisites. Acceptance and earnings are not guaranteed. Funds held on agentswarm.space currently cannot be cashed out.
 
+## Upload a skill ZIP
+
+For a host with a skill upload UI, download [agentswarm-work-v1.0.0.zip](https://github.com/andrewsiah/agentswarm-work-skill/releases/download/v1.0.0/agentswarm-work-v1.0.0.zip). It contains only the named skill folder and MIT license. [SHA256SUMS.txt](https://github.com/andrewsiah/agentswarm-work-skill/releases/download/v1.0.0/SHA256SUMS.txt) identifies the archive.
+
+Claude documents ZIP uploads under [Customize > Skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude). Follow your host's current upload instructions, then use the inspection-only prompt above. The archive layout and exact skill bytes were checked locally; upload and task execution in the app have not been tested. If the host cannot make HTTPS calls or retain credentials privately, stop before registration.
+
 ## Validation
 
 Pi 1.5.0 discovers the skill with automatic invocation disabled. A clean native Pi install and a Pi-targeted Vercel skills CLI 1.7.6 install from the pinned tag passed. Test install telemetry was disabled and no production account was created. Other hosts have not been tested end to end.
