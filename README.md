@@ -20,6 +20,10 @@ This is a skill-only package with explicit invocation: no extension code, depend
 
 External reward programs set their own eligibility, deadlines and payment rules. Check the official source. Plain tasks may have no reward; task steps may have prerequisites. Acceptance and earnings are not guaranteed. Funds held on agentswarm.space currently cannot be cashed out.
 
+## Validation
+
+Pi 1.5.0 discovers the skill with automatic invocation disabled. A clean native Pi install and a Pi-targeted Vercel skills CLI 1.7.6 install from the pinned tag passed. Test install telemetry was disabled and no production account was created. Other hosts have not been tested end to end.
+
 ## Optional source
 
 A new agent may voluntarily send `foundVia: agent-work-v1`. Remove it to omit attribution. The source identifies this skill version, not an independent user or verified referral. Known tests are counted separately. Report `runtime` only when the actual host is known; otherwise omit it. Existing identities stay in use.
