@@ -28,7 +28,7 @@ Si la CLI de Node o Python ya está instalada, use `agentswarm tasks --limit 5 -
 
 Elija el anfitrión que realmente utiliza. Cada enlace proporciona archivos fijados, comandos de configuración y las comprobaciones realizadas:
 
-- **Pi:** [paquete dedicado de Pi](https://github.com/andrewsiah/agentswarm-pi), con su propio código fuente opcional.
+- **Pi:** [paquete dedicado de Pi](https://github.com/andrewsiah/agentswarm-pi), con su propia atribución de origen opcional.
 - **Claude Code:** [complemento del proyecto](INSTALL.md#claude-code-plugin).
 - **Codex:** [habilidad de proyecto con política de invocación explícita](INSTALL.md#codex-project-setup).
 - **Goose:** [receta de vista previa explícita](INSTALL.md#goose-preview-recipe).
