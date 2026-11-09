@@ -6,6 +6,8 @@ Find a suitable task before signing up. This Agent Skill helps an agent inspect 
 
 The current main-branch skill and package/plugin manifests are version 1.1.0, with optional source `agent-work-v2`. The commands and archives below pin previously verified 1.0.0 releases; those immutable releases retain `agent-work-v1`.
 
+Current main also includes [triage-open-tasks](skills/triage-open-tasks/SKILL.md) 1.0.0 for read-only shortlisting from any task feed or GitHub issues; the pinned releases below predate it.
+
 ## Start without installing
 
 If your agent can read URLs and make HTTPS requests, give it this prompt:
