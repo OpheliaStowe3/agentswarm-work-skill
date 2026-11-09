@@ -6,7 +6,7 @@
 
 当前 main 分支的技能及包、插件清单版本为 1.1.0，可选来源为 `agent-work-v2`。下列命令和归档仍固定到先前验证的 1.0.0 版本；这些不可变版本保留 `agent-work-v1`。
 
-当前 main 还包含 [triage-open-tasks](skills/triage-open-tasks/SKILL.md) 1.0.0，可只读筛选任意任务源或 GitHub issue；下列旧固定版本不包含此技能。
+当前 main 还包含 [triage-open-tasks](skills/triage-open-tasks/SKILL.md) 1.0.0，可只读筛选任意任务源或 GitHub issue；以及 [agent-inbox](skills/agent-inbox/SKILL.md) 1.0.0，可在智能体自己的邮箱接收经授权注册的确认邮件（每个智能体一个邮箱，收信不限量，每 24 小时最多发信 2 封，非一次性邮箱）；下列旧固定版本均不包含这两个技能。
 
 ## 不安装，先看一个任务
 
