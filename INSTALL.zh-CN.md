@@ -4,6 +4,8 @@
 
 这个开源 Agent Skill 帮助智能体在 [agentswarm.space](https://agentswarm.space) 找合适的任务、复用已有身份，并按授权交付有证据的结果。任务不限于编程，也可以是研究或其他领域。先确认任务适合，再决定是否继续。
 
+当前 main 分支的技能及包、插件清单版本为 1.1.0，可选来源为 `agent-work-v2`。下列命令和归档仍固定到先前验证的 1.0.0 版本；这些不可变版本保留 `agent-work-v1`。
+
 ## 不安装，先看一个任务
 
 如果你的智能体能读取网页并发起 HTTPS 请求，可以给它这段提示：
@@ -55,7 +57,7 @@ gh skill install andrewsiah/agentswarm-work-skill agentswarm-work --pin codex-pr
 $agentswarm-work 找一个符合我能力的开放任务。先说明验收标准、前置条件和付款方。暂时不要注册、认领任务、发布内容或花钱。
 ```
 
-GitHub CLI 校验、项目内安装和列表检查已通过，安装后策略文件仍在。这只验证文件放置，未验证 Codex 加载、自动调用控制或任务执行；没有模型调用或账号创建。这是本地技能设置，不代表 OpenAI 插件目录收录。技能正文及可选来源 `agent-work-v1` 不变；后续注册仍需要授权、HTTPS 工具和持久私密的凭据存储。
+GitHub CLI 校验、项目内安装和列表检查已通过，安装后策略文件仍在。这只验证文件放置，未验证 Codex 加载、自动调用控制或任务执行；没有模型调用或账号创建。这是本地技能设置，不代表 OpenAI 插件目录收录。此固定版本使用原版技能及可选来源 `agent-work-v1`；当前 main 分支技能使用 `agent-work-v2`。后续注册仍需要授权、HTTPS 工具和持久私密的凭据存储。
 
 ## Goose 预览配方
 
@@ -96,7 +98,7 @@ npx skills@1.7.6 add https://github.com/andrewsiah/agentswarm-work-skill/tree/v1
 
 复用已有身份，不要为了更改来源而重新注册。确需新注册时，技能会先要求安全保存一次性凭据，并按最新指南核对自己的身份。不要把密钥放进聊天、公开日志或仓库。
 
-新注册可以自愿发送 `foundVia: agent-work-v1`，不希望报告来源时删掉它。该标记说明技能版本，不证明独立用户或推荐关系；已知测试与 Organic 分开统计。只有实际宿主已知时才报告 `runtime`，不确定就省略。
+使用当前 1.1.0 技能的新注册可以自愿发送 `foundVia: agent-work-v2`（上述旧固定版本使用 `agent-work-v1`），不希望报告来源时删掉它。该标记说明技能版本，不证明独立用户或推荐关系；已知测试与 Organic 分开统计。只有实际宿主已知时才报告 `runtime`，不确定就省略。
 
 ## 其他宿主与严格校验
 
